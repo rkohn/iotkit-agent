@@ -8,7 +8,11 @@
     "getmac": "*",
     "winston": "*",
     "express": "3.x",
-    "socket.io": "*"
+    "socket.io": "*",
+    "mocha": "*",
+    "expect.js": "*",
+    "supertest": "*",
+    "sinon": "*"
   },
   "scripts": {
     "test": "node agent",

@@ -44,7 +44,7 @@ exports.init = function(conf, logger, onMessage) {
       try {
         onMessage(JSON.parse(packet.payload));
       } catch (ex) {
-        logger.error('MQTT Error on message: %s', ex);
+        logger.error('MQTT Error on message: %s', ex, {});
       }
   });
 
