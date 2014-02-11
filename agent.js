@@ -32,12 +32,12 @@ var utils = require("./lib/utils").init(),
 function main(){
 		
 	utils.getDeviceId(function(id){
-		
+		logger.info("Get device auth token for deviceId: %s", id);
 		auth.getAccessToken(
 			id, 
 			/* success */
 			function(token) {
-				logger.info("IoT Kit Cloud Agent: ", id);
+				logger.info("Auth token found, register device.");
 				var conf = utils.getConfig();
 				
 				// configure sensor store 
@@ -51,7 +51,7 @@ function main(){
 				
 				// configure message provider
 				var agentMessage = require("./lib/agent-message");
-					agentMessage.init(logger, cloud, sensorsList);
+				agentMessage.init(logger, cloud, sensorsList);
 				
 				// register device
 				cloud.reg(sensorsList, agentMessage.registrationCompleted, token);
@@ -63,7 +63,7 @@ function main(){
 				require("./listeners/rest").init(conf, logger, msgHandler);
 				require("./listeners/udp").init(conf, logger, msgHandler);
 				require("./listeners/tcp").init(conf, logger, msgHandler);
-				//require("./listeners/mqtt").init(conf, logger, msgHandler);
+				require("./listeners/mqtt").init(conf, logger, msgHandler);
 			},
 			/* error */
 			function(status, response){
