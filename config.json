@@ -14,8 +14,8 @@
 	"tcp_port_listen": 7070,
 	"tcp_host_listen": "127.0.0.1",
 
-	"reg_topic": "/data/registration",
-	"status_topic": "/data/registration_status",
+	"reg_topic": "data/registration",
+	"status_topic": "data/registration_status",
 	"metric_topic": "data/metric/",
 	
 	"log_viewer": "off",
