@@ -12,7 +12,8 @@
     "mocha": "*",
     "expect.js": "*",
     "supertest": "*",
-    "sinon": "*"
+    "sinon": "*",
+    "request": "*"
   },
   "scripts": {
     "test": "node agent",
