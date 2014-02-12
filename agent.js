@@ -47,7 +47,7 @@ function main(){
 				var sensorsList = sensorsStore.getSensorsList();
 				
 				// create a cloud connector
-				var cloud = require("./lib/cloud").init(conf, logger, id, sensorsStore);
+				var cloud = require("./lib/cloud").init(conf, logger, id, sensorsStore, main);
 				
 				// configure message provider
 				var agentMessage = require("./lib/agent-message");
